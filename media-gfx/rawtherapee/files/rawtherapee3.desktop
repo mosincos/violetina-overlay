@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Raw Therapee
+Name[sr]=Raw Те�?апи�?а
+Name[sr@latin]=Raw Terapija
+Comment=The Experimental Raw Photo Editor
+Comment[sr]=�?кспе�?имен�?ални п�?ог�?ам за Raw �?о�?ог�?а�?и�?е 
+Comment[sr@latin]=Eksperimentalni program za Raw fotografije
+Exec=/usr/bin/rt
+Icon=rawtherapee.png
+Terminal=false
+Encoding=UTF-8
+Type=Application
+Categories=Application;Graphics;
+
+MimeType=image/x-canon-cr2;image/x-canon-crw;image/x-fuji-raf;image/x-kodak-dcr;image/x-kodak-k25;image/x-kodak-kdc;image/x-minolta-mrw;image/x-nikon-nef;image/x-olympus-orf;image/x-panasonic-raw;image/x-pentax-pef;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf;

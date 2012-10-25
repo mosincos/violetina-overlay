@@ -1,0 +1,10 @@
+--- keymap   2012-05-11 02:53:50.575778240 +0200 
++++ keymap.patched   2012-05-11 02:54:26.326776233 +0200 
+@@ -7,7 +7,7 @@ 
+         l=$LANG 
+         unset LANG 
+  
+-        for cfg in etc/{rc,vconsole,locale}.conf; do 
++        for cfg in etc/env.d/02locale; do 
+             [[ -s $BASEDIR/$cfg ]] && . "$BASEDIR/$cfg" 
+         done 

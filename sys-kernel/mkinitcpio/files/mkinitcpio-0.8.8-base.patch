@@ -1,0 +1,16 @@
+--- base   2012-05-11 02:35:54.364838672 +0200 
++++ base.patched   2012-05-11 02:36:11.115837731 +0200 
+@@ -12,9 +12,12 @@ 
+     add_symlink /bin usr/bin 
+     add_symlink /usr/sbin bin 
+  
+-    add_binary /usr/lib/initcpio/busybox /bin/busybox 
++    add_binary /bin/busybox /bin/busybox 
+  
+-    for applet in $(/usr/lib/initcpio/busybox --list); do 
++    add_device "/dev/console" c 5 1 
++    add_device "/dev/mem" c 1 1 
++    
++    for applet in $(/bin/busybox --list); do 
+         add_symlink "/usr/bin/$applet" busybox 
+     done 

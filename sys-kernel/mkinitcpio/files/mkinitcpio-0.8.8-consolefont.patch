@@ -1,0 +1,19 @@
+--- consolefont   2012-03-24 20:43:12.000000000 +0100 
++++ consolefont.patched   2012-05-11 02:52:29.449782797 +0200 
+@@ -5,14 +5,14 @@ 
+  
+     # subshell to avoid namespace pollution 
+     ( 
+-        for cfg in etc/{rc,vconsole}.conf; do 
++        for cfg in etc/conf.d/consolefont; do 
+             [[ -s $BASEDIR/$cfg ]] && . "$BASEDIR/$cfg" 
+         done 
+  
+         [[ $FONT ]] && CONSOLEFONT=$FONT 
+  
+         if [[ $CONSOLEFONT ]]; then 
+-            for file in "$BASEDIR/usr/share/kbd/consolefonts/$CONSOLEFONT".psf?(u)?(.gz); do 
++            for file in "$BASEDIR/usr/share/consolefonts/$CONSOLEFONT".psf?(u)?(.gz); do 
+                 if [[ -e $file ]]; then 
+                     [[ $file =~ \.(psfu?)(\.gz)?$ ]] && ext=${BASH_REMATCH[1]} 
+                     if [[ $file = *.gz ]]; then
