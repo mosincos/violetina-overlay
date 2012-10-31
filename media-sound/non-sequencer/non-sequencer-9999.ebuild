@@ -21,6 +21,7 @@ RDEPEND=">=media-sound/jack-audio-connection-kit-0.103.0
 	media-sound/non-session-manager
 	"
 DEPEND="${RDEPEND}
+	x11-libs/ntk
 	x11-libs/cairo 
 	x11-libs/libXft 
 	media-libs/libpng 
@@ -32,19 +33,19 @@ DEPEND="${RDEPEND}
 "
 
 
-src_prepare() {
-	for i in mixer sequencer session-manager timeline
-	do
-		cd ${S}/$i
-		sed -i -e 's;@BIN_PATH@:$(prefix)/bin;@BIN_PATH@/:;' makefile.inc || die "sed $i/makefile.inc failed"
-	done
-}
+#src_prepare() {
+#	for i in mixer sequencer session-manager timeline
+#	do
+#		cd ${S}/$i
+#		sed -i -e 's;@BIN_PATH@:$(prefix)/bin;@BIN_PATH@/:;' makefile.inc || die "sed $i/makefile.inc failed"
+#	done
+#}
 
 src_configure() {
 	if use debug
-		then git submodule update --init && make -C lib && ./configure --prefix=/usr --enable-debug=yes
+		then ./configure --prefix=/usr --enable-debug=yes
 	else 
-		git submodule update --init && make -C lib && ./configure --prefix=/usr --enable-debug=no
+		 ./configure --prefix=/usr --enable-debug=no
 
 	fi
 }

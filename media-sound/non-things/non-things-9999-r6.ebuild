@@ -4,24 +4,22 @@
 
 EAPI="4"
 
-inherit eutils git-2
+#inherit eutils git-2
 
 DESCRIPTION="The Non Things: Non-DAW, Non-Mixer, Non-Sequencer and Non-Session-Manager"
 HOMEPAGE="http://non.tuxfamily.org"
-EGIT_REPO_URI="git://git.tuxfamily.org/gitroot/non/non.git"
+#EGIT_REPO_URI="git://git.tuxfamily.org/gitroot/non/non.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="**"
-IUSE="-debug"
+IUSE="-debug -non-daw -non-mixer -non-sequencer"
 
 RDEPEND=">=media-sound/jack-audio-connection-kit-0.103.0
 	>=media-libs/liblrdf-0.1.0
 	>=media-libs/liblo-0.26
 	>=dev-libs/libsigc++-2.2.0
-	media-sound/non-session-manager
 	"
 DEPEND="${RDEPEND}
-	x11-libs/ntk
 	x11-libs/cairo 
 	x11-libs/libXft 
 	media-libs/libpng 
@@ -30,31 +28,10 @@ DEPEND="${RDEPEND}
 	virtual/jpeg 
 	x11-libs/libXinerama
 	x11-libs/libxcb 
+	non-daw? ( media-sound/non-daw )
+	non-mixer? ( media-sound/non-mixer )
+	non-sequencer? ( media-sound/non-sequencer )
+	media-sound/non-session-manager
 "
 
-
-src_configure() {
-	if use debug
-		then ./configure --prefix=/usr --enable-debug=yes
-	else 
-		./configure --prefix=/usr --enable-debug=no
-
-	fi
-}
-
-src_compile() {
-#make # builds everything else
-	cd ${S}/nonlib 
-	make -C nonlib
-	cd  ${S}/FL
-	make -C  FL
-	cd ${S}/timeline 
-	make -C  timeline
-}
-
-src_install() {
-#	emake DESTDIR="${D}" install
-	 cd ${S}/timeline 
-	make install DESTDIR=${D} 
-}
 
