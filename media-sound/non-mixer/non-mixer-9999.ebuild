@@ -36,7 +36,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	if use debug
-		./configure --prefix=/usr --enable-debug=yes
+		then ./configure --prefix=/usr --enable-debug=yes
 	else 
 		./configure --prefix=/usr --enable-debug=no
 
