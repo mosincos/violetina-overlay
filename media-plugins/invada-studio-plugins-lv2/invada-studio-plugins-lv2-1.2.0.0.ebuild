@@ -6,8 +6,10 @@ inherit versionator toolchain-funcs multilib
 
 DESCRIPTION="Invada lv2 package, contains: Delay, Dynamics, Filters, Reverb, Utility"
 HOMEPAGE="http://www.invadarecords.com/Downloads.php?ID=00000264"
-MY_PV=$(replace_version_separator 3 '-' )
-SRC_URI="http://www.invadarecords.com/downloads/${PN}_${MY_PV}.tar.gz"
+#MY_PV=$(replace_version_separator 3 '-' )
+SRC_URI="https://launchpad.net/invada-studio/lv2/1.2/+download/invada-studio-plugins-lv2_1.2.0-0.tar.gz"
+
+#http://www.invadarecords.com/downloads/${PN}_${MY_PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
