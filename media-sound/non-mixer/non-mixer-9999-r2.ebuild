@@ -38,8 +38,8 @@ DEPEND="${RDEPEND}
 src_configure() {
 	${WAF_BINARY:="${S}/waf"}
 	if use debug
-		then ./waf configure --prefix=/usr  --project=session-manager  --enable-debug
- 		else ./waf configure --prefix=/usr  --project=session-manager  
+		then ./waf configure --prefix=/usr  --project=mixer  --enable-debug
+ 		else ./waf configure --prefix=/usr  --project=mixer  
 	fi
 }
 

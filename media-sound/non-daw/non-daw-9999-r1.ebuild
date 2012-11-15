@@ -9,7 +9,7 @@ inherit waf-utils git-2
 DESCRIPTION="The Non Things: Non-DAW, Non-Mixer, Non-Sequencer and Non-Session-Manager"
 HOMEPAGE="http://non.tuxfamily.org"
 EGIT_REPO_URI="git://git.tuxfamily.org/gitroot/non/non.git"
-EGIT_BRANCH="waf"
+#EGIT_BRANCH="waf"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="**"
@@ -38,8 +38,8 @@ DEPEND="${RDEPEND}
 src_configure() {
 	${WAF_BINARY:="${S}/waf"}
 	if use debug
-		then ./waf configure --prefix=/usr  --project=timeline --use-system-ntk --enable-debug
- 		else ./waf configure --prefix=/usr  --project=timeline --use-system-ntk 
+		then ./waf configure --prefix=/usr  --project=timeline --enable-debug
+ 		else ./waf configure --prefix=/usr  --project=timeline  
 	fi
 }
 
