@@ -49,5 +49,8 @@ src_compile() {
 
 src_install() {
 	waf-utils_src_install
+	dobin "${S}/timeline/bin/import-external-sources"
+        dobin "${S}/timeline/bin/remove-unused-sources"
+
 }
 
