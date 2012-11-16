@@ -22,7 +22,7 @@ EAPI=4
 # inherit eutils, as a large amount of important functionality has been
 # moved there. For example, the epatch call mentioned below wont work
 # without the following line:
-inherit eutils python waf-utils 
+inherit waf-utils 
 #eutils
 # A well-used example of an eclass function that needs eutils is epatch. If
 # your source needs patches applied, it's suggested to put your patch in the
@@ -122,6 +122,6 @@ pkg_setup() {
 
 
 src_configure() {
-	waf-utils_src_configure \
-	--prefix=/usr 
+	${WAF_BINARY:="${S}/waf"}
+	./waf configure --prefix=/usr 
 }
