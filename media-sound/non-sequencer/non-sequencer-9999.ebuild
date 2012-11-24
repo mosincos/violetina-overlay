@@ -20,7 +20,6 @@ RDEPEND=">=media-sound/jack-audio-connection-kit-0.103.0
 	>=media-libs/liblrdf-0.1.0
 	>=media-libs/liblo-0.26
 	>=dev-libs/libsigc++-2.2.0
-	media-sound/non-session-manager
 	"
 DEPEND="${RDEPEND}
 	x11-libs/ntk
