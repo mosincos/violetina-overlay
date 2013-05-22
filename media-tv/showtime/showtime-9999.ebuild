@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 eutils
+inherit git-2 autotools-utils eutils
 
 DESCRIPTION="hts media center for tvheadend and upnp"
 SRC_URI=""
@@ -32,12 +32,10 @@ src_configure() {
        #./configure --prefix=$prefix 
 #econf
 }
+
 src_compile() {
-        
-        emake || die
+	make || die
 }
-
-
 src_install() {
         emake DESTDIR="${D}" install || die
 

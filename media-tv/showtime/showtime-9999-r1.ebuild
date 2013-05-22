@@ -20,7 +20,7 @@ DEPEND="ccache? ( dev-util/ccache )
 	x11-libs/pango"
 SLOT="0"
 src_configure() {
- ./configure --prefix=/usr \
+ ./configure --disable-cddb --disable-cdda --prefix=/usr \
                 $(use_enable pulseaudio libpulse) \
                 $(usex ccache "--ccache" "")
                     
